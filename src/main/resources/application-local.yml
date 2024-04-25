@@ -1,0 +1,39 @@
+
+server:
+  port: 8585
+  servlet:
+    context-path: /rest
+
+spring:
+  application:
+    name: stad
+  sql:
+    init:
+      mode: always
+  datasource:
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+    initialization-mode: always
+    url: jdbc:h2:mem:staddb
+#    url: jdbc:h2:~/Documenten/databaseH2/cruddb
+#
+#  freemarker:
+#    template-loader-path:
+#      classpath: /templates
+#    suffix: .ftlh
+  thymeleaf:
+    cache: false
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+logging:
+  level:
+    be.ipeters.stad.*: DEBUG
+jpa:
+  show-sql: true
+  defer-datasource-initialization: true
+  hibernate:
+    ddl-auto: update
